@@ -84,7 +84,7 @@ function App() {
         <main className="flex-grow p-4">
           <button
             onClick={handleCreate}
-            className="mb-4 px-4 py-2 rounded bg-orange-500 text-white hover:bg-orange-600 transition"
+            className="md:mb-20 mb-8 px-4 py-2 mt-8 md:mt-1 rounded bg-orange-500 text-white hover:bg-orange-600 transition"
           >
             + New Note
           </button>

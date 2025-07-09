@@ -1,29 +1,87 @@
-# 🌦️ React Weather App
+# 📒 QuickNote
 
-A sleek and modern weather application built with **React**, **Tailwind CSS**, **Framer Motion**, and the **OpenWeatherMap API**. It displays real-time weather conditions, a 5-day forecast, local time, sunrise/sunset info, and allows users to save favorite cities — all wrapped in a dynamic background that changes with time and weather conditions.
-
----
-
-## ✨ Features
-
-- 🔍 **City Search** – Search and view weather in any city worldwide.
-- 📍 **Auto Location Detection** – Detects and shows weather for your current location.
-- 🕒 **Local Time Display** – Shows local time of the selected city based on timezone.
-- 🌅 **Sunrise & Sunset Times** – Accurate daily sunrise and sunset info.
-- 🌤 **5-Day Forecast** – Toggle between current weather and 5-day hourly forecast.
-- 🖼️ **Dynamic Backgrounds** – Background gradients change with time and weather conditions.
-- ⭐ **Favorites** – Save and quickly access favorite cities via a dropdown.
-- 🇺🇳 **Country Flags** – Displays national flag based on country code.
-- 💾 **Local Storage** – Saves favorites in browser memory.
-- 🌀 **Framer Motion Animations** – Smooth transitions and card animations.
-- 📱 **Responsive Design** – Works beautifully on all screen sizes.
+**QuickNote** is a sleek and responsive note-taking web app built with React. It allows users to quickly create, edit, and manage their notes with an intuitive interface and features like dynamic markdown support, light/dark theme toggle, confirmation prompts, and animated UI feedback.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Features
 
-### 1. Clone the Repository
+* 📝 **Create, Edit, Delete Notes**
+  Easily manage your notes in a clean and accessible layout.
+
+* 🌙 **Dark Mode Support**
+  Toggle between light and dark themes with smooth animations.
+
+* ⚡️ **Fast & Dynamic UI**
+  Instant updates with animated transitions and toast notifications for feedback.
+
+* 🧠 **Markdown Support**
+  Supports GitHub-flavored markdown syntax for richer notes.
+
+* 🛑 **Confirmation Prompts**
+  Prevent accidental deletions with confirmation dialogs.
+
+* ✅ **Smart Save Logic**
+  Save button disables when no changes are made (edit mode) or when required fields are empty (create mode).
+
+* 📱 **Responsive Design**
+  Works beautifully across desktops, tablets, and phones.
+
+---
+
+## 🛠️ Tech Stack
+
+* **React + Vite** (with Hooks)
+* **Tailwind CSS** for utility-first styling
+* **React Markdown** (`react-markdown`, `remark-gfm`)
+* **React Toastify** for notifications
+* **React Icons** for UI icons
+
+---
+
+## 📸 Screenshots
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+
+---
+
+## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/weather-app.git
-cd weather-app
+# Clone the repository
+git clone https://github.com/Dev-Rodiyat/Quick-Note.git
+cd Quick-Note
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+---
+
+## ✨ Usage
+
+1. Click **"+ New Note"** to start writing.
+2. Use **Markdown** syntax to add formatting.
+3. Click **"Save"** or **"Update"** to save the note.
+4. Click the lightning icon to toggle between light and dark themes.
+5. Click **"Delete icon"** to remove a note (with confirmation).
+6. Notes are dynamically rendered and organized with smooth animations.
+
+---
+
+## 🧠 Naming Inspiration
+
+> **QuickNote** reflects the app’s core values — quick, intuitive note-taking with an efficient interface.
+
+---
+
+## 💬 Feedback
+
+Have suggestions or ideas to improve QuickNote?
+Feel free to [open an issue](https://github.com/Dev-Rodiyat/Quick-Note/issues) or [create a pull request](https://github.com/Dev-Rodiyat/Quick-Note/pulls).

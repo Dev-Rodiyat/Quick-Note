@@ -6,9 +6,18 @@ import remarkGfm from "remark-gfm";
 
 const CardNote = ({ note, onEdit, onDelete, onTagClick }) => {
     const { title, content, tags, timestamp } = note;
-    const [expanded, setExpanded] = useState(false); 
+    const [expanded, setExpanded] = useState(false);
 
     const toggleExpand = () => setExpanded((prev) => !prev);
+
+    const formatOptions = {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+    };
 
     return (
         <div
@@ -73,7 +82,7 @@ const CardNote = ({ note, onEdit, onDelete, onTagClick }) => {
                 )}
 
                 <p className="text-[11px] text-zinc-400 mt-4">
-                    {new Date(timestamp).toLocaleString()}
+                    {new Date(timestamp).toLocaleString(undefined, formatOptions)}
                 </p>
             </div>
         </div>
