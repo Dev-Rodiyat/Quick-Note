@@ -24,7 +24,6 @@ function App() {
 
   useEffect(() => {
     if (isLoaded) {
-      console.log("Saving notes to localStorage:", notes);
       localStorage.setItem(LOCAL_KEY, JSON.stringify(notes));
     }
   }, [notes, isLoaded]);
