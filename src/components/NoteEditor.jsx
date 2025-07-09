@@ -9,25 +9,25 @@ const NoteEditor = ({ isOpen, onClose, onSave, existingNote }) => {
     const [initialData, setInitialData] = useState({ title: "", content: "", tags: "" });
 
     useEffect(() => {
-    if (isOpen) {
-        if (existingNote) {
-            const initialTags = existingNote.tags?.join(", ") || "";
-            setTitle(existingNote.title);
-            setContent(existingNote.content);
-            setTags(initialTags);
-            setInitialData({
-                title: existingNote.title,
-                content: existingNote.content,
-                tags: initialTags,
-            });
-        } else {
-            setTitle("");
-            setContent("");
-            setTags("");
-            setInitialData({ title: "", content: "", tags: "" });
+        if (isOpen) {
+            if (existingNote) {
+                const initialTags = existingNote.tags?.join(", ") || "";
+                setTitle(existingNote.title);
+                setContent(existingNote.content);
+                setTags(initialTags);
+                setInitialData({
+                    title: existingNote.title,
+                    content: existingNote.content,
+                    tags: initialTags,
+                });
+            } else {
+                setTitle("");
+                setContent("");
+                setTags("");
+                setInitialData({ title: "", content: "", tags: "" });
+            }
         }
-    }
-}, [isOpen, existingNote]);
+    }, [isOpen, existingNote]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -100,11 +100,10 @@ const NoteEditor = ({ isOpen, onClose, onSave, existingNote }) => {
                         <button
                             type="submit"
                             disabled={isSaveDisabled}
-                            className={`px-4 py-1 rounded text-white text-sm transition ${
-                                isSaveDisabled
+                            className={`px-4 py-1 rounded text-white text-sm transition ${isSaveDisabled
                                     ? "bg-orange-300 cursor-not-allowed"
                                     : "bg-orange-500 hover:bg-orange-600"
-                            }`}
+                                }`}
                         >
                             {existingNote ? "Update" : "Save"}
                         </button>

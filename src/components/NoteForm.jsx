@@ -15,8 +15,8 @@ const NoteForm = ({ onSubmit, onClose, initialData = {}, mode = "create" }) => {
         mode === "create"
             ? title.trim() === "" && content.trim() === ""
             : title === initialData.title &&
-              content === initialData.content &&
-              tags === initialData.tags;
+            content === initialData.content &&
+            tags === initialData.tags;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -71,11 +71,10 @@ const NoteForm = ({ onSubmit, onClose, initialData = {}, mode = "create" }) => {
                 <button
                     type="submit"
                     disabled={isDisabled}
-                    className={`px-4 py-1 rounded text-sm text-white ${
-                        isDisabled
+                    className={`px-4 py-1 rounded text-sm text-white ${isDisabled
                             ? "bg-orange-300 cursor-not-allowed"
                             : "bg-orange-500 hover:bg-orange-600"
-                    }`}
+                        }`}
                 >
                     {mode === "create" ? "Save" : "Update"}
                 </button>

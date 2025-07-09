@@ -14,7 +14,6 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
         <div
             className="relative bg-white dark:bg-zinc-900 break-inside-avoid rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow group"
         >
-            {/* Top-right actions */}
             <div className="absolute top-3 right-3 flex gap-2">
                 <button
                     onClick={(e) => {
@@ -38,13 +37,11 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
                 </button>
             </div>
 
-            {/* Main note body */}
             <div>
                 <h3 className="text-lg font-semibold text-zinc-800 dark:text-white mb-2">
                     {title}
                 </h3>
 
-                {/* Markdown content */}
                 <div
                     className={`text-sm prose dark:prose-invert prose-p:my-1 text-zinc-700 dark:text-zinc-300 transition-all ${expanded ? "" : "line-clamp-5"
                         }`}
@@ -52,7 +49,6 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
                 </div>
 
-                {/* Expand/Collapse Button */}
                 {content.length > 300 && (
                     <button
                         onClick={toggleExpand}
@@ -62,7 +58,6 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
                     </button>
                 )}
 
-                {/* Tags */}
                 {tags?.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-3">
                         {note.tags.map((tag, i) => (
@@ -77,7 +72,6 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
                     </div>
                 )}
 
-                {/* Timestamp */}
                 <p className="text-[11px] text-zinc-400 mt-4">
                     {new Date(timestamp).toLocaleString()}
                 </p>
