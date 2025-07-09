@@ -4,7 +4,7 @@ import { MdEdit } from "react-icons/md";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 
-const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
+const CardNote = ({ note, onEdit, onDelete, onTagClick }) => {
     const { title, content, tags, timestamp } = note;
     const [expanded, setExpanded] = useState(false); 
 
@@ -80,4 +80,4 @@ const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
     );
 };
 
-export default Notecard;
+export default CardNote;

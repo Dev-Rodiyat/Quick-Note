@@ -1,4 +1,4 @@
-import Notecard from "./Notecard";
+import CardNote from "./CardNote";
 
 const NotesList = ({ notes, onEdit, onDelete, onTagClick }) => {
     if (notes.length === 0) {
@@ -12,7 +12,7 @@ const NotesList = ({ notes, onEdit, onDelete, onTagClick }) => {
     return (
         <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {notes.map(note => (
-                <Notecard
+                <CardNote
                     key={note.id}
                     note={note}
                     onEdit={onEdit}
