@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 
 const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
     const { title, content, tags, timestamp } = note;
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(false); 
 
     const toggleExpand = () => setExpanded((prev) => !prev);
 
