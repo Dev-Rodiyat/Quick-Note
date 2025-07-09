@@ -4,12 +4,12 @@ import { MdEdit } from "react-icons/md";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 
-const NoteCard = ({ note, onEdit, onDelete, onTagClick }) => {
+const Notecard = ({ note, onEdit, onDelete, onTagClick }) => {
     const { title, content, tags, timestamp } = note;
     const [expanded, setExpanded] = useState(false);
 
     const toggleExpand = () => setExpanded((prev) => !prev);
-    
+
     return (
         <div
             className="relative bg-white dark:bg-zinc-900 break-inside-avoid rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow group"
@@ -86,4 +86,4 @@ const NoteCard = ({ note, onEdit, onDelete, onTagClick }) => {
     );
 };
 
-export default NoteCard;
+export default Notecard;

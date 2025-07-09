@@ -19,7 +19,7 @@ function App() {
     if (saved) {
       setNotes(JSON.parse(saved));
     }
-    setIsLoaded(true); // ✅ trigger saving only after this
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -33,13 +33,11 @@ function App() {
     setNotes((prev) => {
       const exists = prev.find((n) => n.id === newNote.id);
       if (exists) {
-        // Update existing
         return prev.map((n) => (n.id === newNote.id ? newNote : n));
       } else {
-        // Assign unique id + timestamp for new note
         const noteWithMeta = {
           ...newNote,
-          id: Date.now(), // or crypto.randomUUID() if supported
+          id: Date.now(),
           timestamp: new Date().toISOString(),
         };
         return [noteWithMeta, ...prev];
@@ -56,28 +54,27 @@ function App() {
     );
   });
 
-const handleDeleteNote = (id) => {
-  const confirmDelete = window.confirm("Are you sure you want to delete this note?");
-  if (!confirmDelete) return;
+  const handleDeleteNote = (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this note?");
+    if (!confirmDelete) return;
 
-  try {
-    // simulate delete (replace with API call if needed)
-    setNotes((prev) => prev.filter((note) => note.id !== id));
-    toast.success("Note deleted successfully!");
-  } catch (error) {
-    toast.error("Failed to delete note.");
-  }
-};
+    try {
+      setNotes((prev) => prev.filter((note) => note.id !== id));
+      toast.success("Note deleted successfully!");
+    } catch (error) {
+      toast.error("Failed to delete note.");
+    }
+  };
 
-const handleEdit = (note) => {
-  setEditingNote(note);
-  setIsEditorOpen(true);
-};
+  const handleEdit = (note) => {
+    setEditingNote(note);
+    setIsEditorOpen(true);
+  };
 
-const handleCreate = () => {
-  setEditingNote(null);
-  setIsEditorOpen(true);
-};
+  const handleCreate = () => {
+    setEditingNote(null);
+    setIsEditorOpen(true);
+  };
 
   return (
     <>

@@ -6,7 +6,6 @@ const NoteEditor = ({ isOpen, onClose, onSave, existingNote }) => {
     const [content, setContent] = useState("");
     const [tags, setTags] = useState("");
 
-    // Store original data for edit comparison
     const [initialData, setInitialData] = useState({ title: "", content: "", tags: "" });
 
     useEffect(() => {
@@ -47,7 +46,6 @@ const NoteEditor = ({ isOpen, onClose, onSave, existingNote }) => {
         toast.success(`Note ${existingNote ? "updated" : "created"} successfully!`);
     };
 
-    // Determine if button should be disabled
     const isUnchanged =
         title === initialData.title &&
         content === initialData.content &&
